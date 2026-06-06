@@ -25,13 +25,15 @@ def get_levels() -> list:
     return result
 
 
-MAX_LEVELS = 3
+MAX_LEVELS = 5
 
 LEVEL_TYPES = [
     "Normal",
     "Node",
     "Rampage",
     "Cool",
+    "Invisible",
+    "Pacifism",
 ]
 
 ALL_LEVELS = get_levels()
