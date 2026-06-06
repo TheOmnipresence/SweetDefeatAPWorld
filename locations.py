@@ -21,7 +21,7 @@ def get_levels() -> list:
     result = []
     for level_type in LEVEL_TYPES:
         for level in range(MAX_LEVELS):
-            result.append(level_type + " Level " + str(level))
+            result.append(level_type + " Level " + str(level + 1))
     return result
 
 
