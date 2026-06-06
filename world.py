@@ -6,7 +6,7 @@ from worlds.AutoWorld import World
 
 # Imports of your world's files must be relative.
 from . import items, locations, regions, rules, web_world
-from . import options as apquest_options  # rename due to a name conflict with World.options
+from . import options as sweet_defeat_options  # rename due to a name conflict with World.options
 
 # APQuest will go through all the parts of the world api one step at a time,
 # with many examples and comments across multiple files.
@@ -36,9 +36,9 @@ class SweetDefeatWorld(World):
     web = web_world.SweetDefeatWebWorld()
 
     # This is how we associate the options defined in our options.py with our world.
-    # (Note: options.py has been imported as "apquest_options" at the top of this file to avoid a name conflict)
-    options_dataclass = apquest_options.APQuestOptions
-    options: apquest_options.APQuestOptions  # Common mistake: This has to be a colon (:), not an equals sign (=).
+    # (Note: options.py has been imported as "sweet_defeat_options" at the top of this file to avoid a name conflict)
+    options_dataclass = sweet_defeat_options.SweetDefeatOptions
+    options: sweet_defeat_options.SweetDefeatOptions  # Common mistake: This has to be a colon (:), not an equals sign (=).
 
     # Our world class must have a static location_name_to_id and item_name_to_id defined.
     # We define these in regions.py and items.py respectively, so we just set them here.
@@ -80,6 +80,4 @@ class SweetDefeatWorld(World):
     # slot_data is just a dictionary using basic types, that will be converted to json when sent to the client.
     def fill_slot_data(self) -> Mapping[str, Any]:
         # If you need access to the player's chosen options on the client side, there is a helper for that.
-        return self.options.as_dict(
-            "hard_mode", "hammer", "extra_starting_chest", "confetti_explosiveness", "player_sprite"
-        )
+        return self.options.as_dict()
