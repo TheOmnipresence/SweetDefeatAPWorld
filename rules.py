@@ -30,13 +30,13 @@ def set_all_location_rules(world: SweetDefeatWorld) -> None:
         set_rule(world.get_location(i + " Level 2"), lambda state: True)
         set_rule(world.get_location(i + " Level 3"), lambda state: state.has_all(["Level 3 Cooler 1", "Level 3 Cooler 2", "Level 3 Cooler 3"], world.player))
         set_rule(world.get_location(i + " Level 4"), lambda state: state.has_all(["Level 4 Bubble 1", "Level 4 Bubble 2", "Level 4 Bubble 3", "Level 4 Bubble 4"], world.player))
-        set_rule(world.get_location(i + " Level 5"), lambda state: state.has_all(["Level 5 Cooler 1", "Level 5 Cooler 2", "Level 5 Cooler 3", "Level 5 Cooler 4", "Level 5 Bubble 3", "Level 5 Bubble 4"], world.player))
+        set_rule(world.get_location(i + " Level 5"), lambda state: state.has_all(["Level 5 Cooler 1", "Level 5 Cooler 2", "Level 5 Cooler 3", "Level 5 Cooler 4", "Level 5 Bubble 2", "Level 5 Bubble 3", "Level 5 Bubble 4"], world.player))
 
     set_rule(world.get_location("Node Level 1"), lambda state: state.has("Level 1 Node", world.player))
     set_rule(world.get_location("Node Level 2"), lambda state: state.has("Level 2 Node", world.player))
     set_rule(world.get_location("Node Level 3"), lambda state: state.has("Level 3 Node", world.player))
     set_rule(world.get_location("Node Level 4"), lambda state: state.has("Level 4 Node", world.player))
-    set_rule(world.get_location("Node Level 5"), lambda state: state.has_all(["Level 5 Node", "Level 5 Bubble 3", "Level 5 Bubble 4"], world.player))
+    set_rule(world.get_location("Node Level 5"), lambda state: state.has_all(["Level 5 Node", "Level 5 Bubble 2", "Level 5 Bubble 3", "Level 5 Bubble 4"], world.player))
 
     set_rule(world.get_location("Rampage Level 1"), lambda state: True)
     set_rule(world.get_location("Rampage Level 2"), lambda state: True)
