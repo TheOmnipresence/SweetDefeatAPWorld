@@ -42,6 +42,76 @@ LEVEL_ITEMS = [
     "Level 5 Bubble 2",
     "Level 5 Bubble 3",
     "Level 5 Bubble 4",
+
+    "Level 6 Node",
+    "Level 6 Cooler 1",
+    "Level 6 Bubble 1",
+    "Level 6 Bubble 2",
+    "Level 6 Bubble 3",
+    "Level 6 Bubble 4",
+    "Level 6 Bubble 5",
+    "Level 6 Bubble 6",
+    "Level 6 Bubble 7",
+    "Level 6 Bubble 8",
+
+    "Level 7 Node",
+    "Level 7 Cooler 1",
+    "Level 7 Cooler 2",
+    "Level 7 Bubble 1",
+    "Level 7 Bubble 2",
+    "Level 7 Bubble 3",
+    "Level 7 Bubble 4",
+    "Level 7 Bubble 5",
+    "Level 7 Bubble 6",
+    "Level 7 Bubble 7",
+    "Level 7 Bubble 8",
+    "Level 7 Bubble 9",
+
+    "Level 8 Node",
+    "Level 8 Cooler 1",
+    "Level 8 Cooler 2",
+    "Level 8 Bubble 1",
+    "Level 8 Bubble 2",
+    "Level 8 Bubble 3",
+    "Level 8 Bubble 4",
+    "Level 8 Bubble 5",
+    "Level 8 Bubble 6",
+    "Level 8 Bubble 7",
+    "Level 8 Bubble 8",
+    "Level 8 Bubble 9",
+    "Level 8 Bubble 10",
+    "Level 8 Bubble 11",
+
+    "Level 9 Node",
+    "Level 9 Cooler 1",
+    "Level 9 Cooler 2",
+    "Level 9 Bubble 1",
+    "Level 9 Bubble 2",
+    "Level 9 Bubble 3",
+    "Level 9 Bubble 4",
+    "Level 9 Bubble 5",
+    "Level 9 Bubble 6",
+    "Level 9 Bubble 7",
+    "Level 9 Bubble 8",
+    "Level 9 Bubble 9",
+    "Level 9 Bubble 10",
+    "Level 9 Bubble 11",
+
+    "Level 10 Node",
+    "Level 10 Cooler 1",
+    "Level 10 Cooler 2",
+    "Level 10 Cooler 3",
+    "Level 10 Bubble 1",
+    "Level 10 Bubble 2",
+    "Level 10 Bubble 3",
+    "Level 10 Bubble 4",
+    "Level 10 Bubble 5",
+    "Level 10 Bubble 6",
+    "Level 10 Bubble 7",
+    "Level 10 Bubble 8",
+    "Level 10 Bubble 10",
+    "Level 10 Bubble 10",
+    "Level 10 Bubble 11",
 ]
 
 ITEM_NAME_TO_ID = {"Quack": 1000} | map_to_dict(LEVEL_ITEMS, lambda e: LEVEL_ITEMS.index(e) + 1)
@@ -69,6 +139,8 @@ def create_all_items(world: SweetDefeatWorld) -> None:
     number_of_items = len(itempool)
 
     number_of_unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))
+    print(number_of_unfilled_locations, " Locations")
+    print(number_of_items, " Items")
 
     needed_number_of_filler_items = number_of_unfilled_locations - number_of_items
 
