@@ -47,7 +47,7 @@ class SweetDefeatWorld(World):
 
     # There is always one region that the generator starts from & assumes you can always go back to.
     # This defaults to "Menu", but you can change it by overriding origin_region_name.
-    origin_region_name = "Overworld"
+    origin_region_name = "Game"
 
     # Our world class must have certain functions ("steps") that get called during generation.
     # The main ones are: create_regions, set_rules, create_items.
@@ -64,7 +64,7 @@ class SweetDefeatWorld(World):
 
     # Our world class must also have a create_item function that can create any one of our items by name at any time.
     # We also put this in a different file, the same one that create_items is in.
-    def create_item(self, name: str) -> items.APQuestItem:
+    def create_item(self, name: str) -> items.SweetDefeatItem:
         return items.create_item_with_correct_classification(self, name)
 
     # For features such as item links and panic-method start inventory, AP may ask your world to create extra filler.
