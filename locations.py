@@ -45,8 +45,6 @@ ALL_LEVELS = get_levels()
 LOCATION_NAME_TO_ID = map_to_dict(ALL_LEVELS, lambda e: ALL_LEVELS.index(e) + 1)
 
 
-# Each Location instance must correctly report the "game" it belongs to.
-# To make this simple, it is common practice to subclass the basic Location class and override the "game" field.
 class SweetDefeatLocation(Location):
     game = "Sweet Defeat"
 

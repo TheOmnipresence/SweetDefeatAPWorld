@@ -217,4 +217,5 @@ def set_all_location_rules(world: SweetDefeatWorld) -> None:
 
 
 def set_completion_condition(world: SweetDefeatWorld) -> None:
-    world.multiworld.completion_condition[world.player] = lambda state: state.has("Level 5 Node", world.player)
+    # 19 + 2 + 21 + 21 + 14 = 77 winds
+    world.multiworld.completion_condition[world.player] = lambda state: state.has_all(["Level 31 Cooler 16", "Level 31 Bubble 2", "Level 31 Bubble 3", "Level 31 Bubble 4", "Level 31 Bubble 14", "Level 31 Bubble 15"], world.player)
