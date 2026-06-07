@@ -25,7 +25,7 @@ def get_levels() -> list:
     return result
 
 
-MAX_LEVELS = 25
+MAX_LEVELS = 30
 
 LEVEL_TYPES = [
     "Normal",
