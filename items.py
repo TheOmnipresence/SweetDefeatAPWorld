@@ -163,6 +163,34 @@ LEVEL_ITEMS = [
     "Level 15 Bubble 5",
     "Level 15 Bubble 6",
     "Level 15 Bubble 7",
+
+    "Level 16 Node",
+    "Level 16 Cooler 1",
+    "Level 16 Bubble 1",
+    "Level 16 Bubble 2",
+
+    "Level 17 Node",
+    "Level 17 Cooler 1",
+    "Level 17 Bubble 1",
+    "Level 17 Bubble 2",
+
+    "Level 18 Node",
+    "Level 18 Cooler 1",
+    "Level 18 Bubble 1",
+    "Level 18 Bubble 2",
+    "Level 18 Bubble 3",
+
+    "Level 19 Node",
+    "Level 19 Cooler 1",
+    "Level 19 Bubble 1",
+    "Level 19 Bubble 2",
+    "Level 19 Bubble 3",
+
+    "Level 20 Node",
+    "Level 20 Cooler 1",
+    "Level 20 Bubble 1",
+    "Level 20 Bubble 2",
+    "Level 20 Bubble 3",
 ]
 
 ITEM_NAME_TO_ID = {"Quack": 1000} | map_to_dict(LEVEL_ITEMS, lambda e: LEVEL_ITEMS.index(e) + 1)
