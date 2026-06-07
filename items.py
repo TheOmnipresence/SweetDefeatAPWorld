@@ -109,7 +109,7 @@ LEVEL_ITEMS = [
     "Level 10 Bubble 6",
     "Level 10 Bubble 7",
     "Level 10 Bubble 8",
-    "Level 10 Bubble 10",
+    "Level 10 Bubble 9",
     "Level 10 Bubble 10",
     "Level 10 Bubble 11",
 
