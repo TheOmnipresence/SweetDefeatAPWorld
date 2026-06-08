@@ -152,7 +152,7 @@ def set_all_location_rules(world: SweetDefeatWorld) -> None:
     set_rule(world.get_location("Cool Level 29"), lambda state: state.has("Level 29 Cooler 1", world.player))
     set_rule(world.get_location("Cool Level 30"), lambda state: state.has("Level 30 Cooler 1", world.player))
 
-    for i in range(25):
+    for i in range(30):
         set_rule(world.get_location("Void Level " + str(i + 1)), lambda state: True)
 
     set_rule(world.get_location("Easier Level 1"), lambda state: state.has("Level 1 Node", world.player))
