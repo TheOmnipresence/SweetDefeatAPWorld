@@ -25,6 +25,7 @@ class DeathlinkAmnesty(Range):
 @dataclass
 class SweetDefeatOptions(PerGameCommonOptions):
     death_link: Deathlink
+    death_link_amnesty: DeathlinkAmnesty
 
 
 option_groups = []
