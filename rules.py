@@ -5,6 +5,8 @@ from typing import TYPE_CHECKING
 from BaseClasses import CollectionState
 from worlds.generic.Rules import add_rule, set_rule
 
+from .locations import LEVEL_TYPES, MAX_LEVELS
+
 if TYPE_CHECKING:
     from .world import SweetDefeatWorld
 
@@ -217,5 +219,21 @@ def set_all_location_rules(world: SweetDefeatWorld) -> None:
 
 
 def set_completion_condition(world: SweetDefeatWorld) -> None:
-    # 19 + 2 + 21 + 21 + 14 = 77 winds
-    world.multiworld.completion_condition[world.player] = lambda state: state.has_all(["Level 31 Cooler 16", "Level 31 Bubble 2", "Level 31 Bubble 3", "Level 31 Bubble 4", "Level 31 Bubble 14", "Level 31 Bubble 15"], world.player)
+    # 19 + 2 + 21 + 21 + 14 = 77 winds, only 37 spaces available, use H&S? it would add 50 checks.
+    world.multiworld.completion_condition[world.player] = lambda state: can_goal(state, world)
+
+
+def can_goal(state: CollectionState, world: SweetDefeatWorld) -> bool:
+    if not state.has_all(["Level 31 Cooler 16", "Level 31 Bubble 3", "Level 31 Bubble 4", "Level 31 Bubble 14", "Level 31 Bubble 15"], world.player):
+        return False
+    for level in range(MAX_LEVELS):
+        if not can_compete_level(level + 1, state, world):
+            return False
+    return True
+
+
+def can_compete_level(level: int, state: CollectionState, world: SweetDefeatWorld) -> bool:
+    for i in LEVEL_TYPES:
+        if world.get_location(i + " Level " + str(level)).access_rule(state):
+            return True
+    return False
