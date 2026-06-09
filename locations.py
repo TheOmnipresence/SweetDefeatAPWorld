@@ -17,9 +17,12 @@ def map_to_dict(array: list, method: Callable) -> dict:
     return result
 
 
-def get_levels() -> list:
+def get_levels(include_excluded = True, world: SweetDefeatWorld = None) -> list:
     result = []
     for level_type in LEVEL_TYPES:
+        if not include_excluded:
+            if world.options.option_exclude_level_type.value - 1 == LEVEL_TYPES.index(level_type):
+                continue
         for level in range(MAX_LEVELS):
             result.append(level_type + " Level " + str(level + 1))
     return result
@@ -60,7 +63,7 @@ def create_all_locations(world: SweetDefeatWorld) -> None:
 
 def create_regular_locations(world: SweetDefeatWorld) -> None:
 
-    world.get_region("Game").add_locations(get_location_names_with_ids(ALL_LEVELS))
+    world.get_region("Game").add_locations(get_location_names_with_ids(get_levels(False, world)))
 
     # Locations may exist only if the player enables certain options.
     # In our case, the extra_starting_chest option adds the Bottom Left Extra Chest location.
