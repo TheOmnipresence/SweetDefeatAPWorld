@@ -22,10 +22,21 @@ class DeathlinkAmnesty(Range):
     range_end = 20
     default = 1
 
+
+class Breathlink(Toggle):
+    """
+    Toggles breathlink for the player. Breathlink for Sweet Defeat is when the player's popsicle melts.
+    """
+
+    display_name = "Breathlink"
+    default = False
+
+
 @dataclass
 class SweetDefeatOptions(PerGameCommonOptions):
     death_link: Deathlink
     death_link_amnesty: DeathlinkAmnesty
+    breath_link: Breathlink
 
 
 option_groups = []
