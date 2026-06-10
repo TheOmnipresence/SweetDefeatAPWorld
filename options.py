@@ -70,7 +70,7 @@ class SweetDefeatOptions(PerGameCommonOptions):
     death_link: Deathlink
     death_link_amnesty: DeathlinkAmnesty
     breath_link: Breathlink
-    option_exclude_level_type: ExcludeLevelType
+    exclude_level_type: ExcludeLevelType
 
 
 option_groups = []

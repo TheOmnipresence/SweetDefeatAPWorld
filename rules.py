@@ -219,7 +219,7 @@ def set_all_location_rules(world: SweetDefeatWorld) -> None:
 
 
 def set_level_rule(world: SweetDefeatWorld, level: str, rule: Callable) -> None:
-    if world.options.option_exclude_level_type.value - 1 == LEVEL_TYPES.index(level.split(" ")[0]):
+    if world.options.exclude_level_type.value - 1 == LEVEL_TYPES.index(level.split(" ")[0]):
         return
     set_rule(world.get_location(level), rule)
 
@@ -240,7 +240,7 @@ def can_goal(state: CollectionState, world: SweetDefeatWorld) -> bool:
 
 def can_compete_level(level: int, state: CollectionState, world: SweetDefeatWorld) -> bool:
     for i in LEVEL_TYPES:
-        if world.options.option_exclude_level_type.value - 1 == LEVEL_TYPES.index(i):
+        if world.options.exclude_level_type.value - 1 == LEVEL_TYPES.index(i):
             continue
         if world.get_location(i + " Level " + str(level)).access_rule(state):
             return True

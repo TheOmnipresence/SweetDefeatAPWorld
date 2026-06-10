@@ -21,7 +21,7 @@ def get_levels(include_excluded = True, world: SweetDefeatWorld = None) -> list:
     result = []
     for level_type in LEVEL_TYPES:
         if not include_excluded:
-            if world.options.option_exclude_level_type.value - 1 == LEVEL_TYPES.index(level_type):
+            if world.options.exclude_level_type.value - 1 == LEVEL_TYPES.index(level_type):
                 continue
         for level in range(MAX_LEVELS):
             result.append(level_type + " Level " + str(level + 1))
