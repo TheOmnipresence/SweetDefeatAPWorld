@@ -41,7 +41,7 @@ def set_all_location_rules(world: SweetDefeatWorld) -> None:
         set_level_rule(world, i + " Level 11", lambda state: True)
         set_level_rule(world, i + " Level 12", lambda state: state.has_all(["Level 12 Cooler 1", "Level 12 Cooler 2"], world.player))
         set_level_rule(world, i + " Level 13", lambda state: True)
-        set_level_rule(world, i + " Level 14", lambda state: state.has_all(["Level 14 Bubble 1", "Level 14 Cooler 2"], world.player) or state.has_all(["Level 14 Bubble " + str(bubble + 2) for bubble in range(6)] + ["Level 14 Cooler 1"], world.player))
+        set_level_rule(world, i + " Level 14", lambda state: state.has_all(["Level 14 Bubble 1", "Level 14 Cooler 2"], world.player) or (state.has_all(["Level 14 Bubble " + str(bubble + 2) for bubble in range(6)] + ["Level 14 Cooler 1"], world.player) and world.options.hard_skips))
         set_level_rule(world, i + " Level 15", lambda state: state.has_all(["Level 15 Cooler " + str(cooler + 1) for cooler in range(3)], world.player))
         set_level_rule(world, i + " Level 16", lambda state: state.has("Level 16 Cooler 1", world.player))
         set_level_rule(world, i + " Level 17", lambda state: True)

@@ -65,12 +65,22 @@ class ExcludeLevelType(Choice):
     default = 0
 
 
+class HardSkips(Toggle):
+    """
+    If hard skips should be included in logic.
+    """
+
+    display_name = "Hard Skips"
+    default = False
+
+
 @dataclass
 class SweetDefeatOptions(PerGameCommonOptions):
     death_link: Deathlink
     death_link_amnesty: DeathlinkAmnesty
     breath_link: Breathlink
     exclude_level_type: ExcludeLevelType
+    hard_skips: HardSkips
 
 
 option_groups = []
