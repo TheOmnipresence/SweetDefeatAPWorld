@@ -59,7 +59,7 @@ def set_all_location_rules(world: SweetDefeatWorld) -> None:
     set_level_rule(world, "Node Level 3", lambda state: state.has("Level 3 Node", world.player))
     set_level_rule(world, "Node Level 4", lambda state: state.has("Level 4 Node", world.player))
     set_level_rule(world, "Node Level 5", lambda state: state.has_all(["Level 5 Node", "Level 5 Bubble 2", "Level 5 Bubble 3", "Level 5 Bubble 4"], world.player))
-    set_level_rule(world, "Node Level 6", lambda state: ((state.has("Level 6 Bubble 5", world.player) and (state.has("Level 6 Bubble 4", world.player) or state.has("Level 6 Bubble 3", world.player))) or state.has("Level 6 Bubble 5", world.player)) and state.has("Level 1 Node", world.player))
+    set_level_rule(world, "Node Level 6", lambda state: ((state.has("Level 6 Bubble 5", world.player) and (state.has("Level 6 Bubble 4", world.player) or state.has("Level 6 Bubble 3", world.player))) or state.has("Level 6 Bubble 5", world.player)) and state.has("Level 6 Node", world.player))
     set_level_rule(world, "Node Level 7", lambda state: ((state.has("Level 7 Bubble 5", world.player) and (state.has("Level 7 Bubble 4", world.player) or state.has("Level 7 Bubble 3", world.player))) or state.has("Level 7 Bubble 5", world.player)) and state.has_all(["Level 7 Bubble 9", "Level 7 Node"], world.player))
     set_level_rule(world, "Node Level 8", lambda state: ((state.has("Level 8 Bubble 5", world.player) and (state.has("Level 8 Bubble 4", world.player) or state.has("Level 8 Bubble 3", world.player))) or state.has("Level 8 Bubble 5", world.player)) and state.has_all(["Level 8 Bubble 9", "Level 8 Bubble 11", "Level 8 Node"], world.player))
     set_level_rule(world, "Node Level 9", lambda state: state.has("Level 9 Node", world.player))
