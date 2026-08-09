@@ -46,6 +46,15 @@ class Breathlink(Toggle):
     default = False
 
 
+class DamageLink(Toggle):
+    """
+    Toggles damagelink for the player. 100 damagelink points is one health.
+    """
+
+    display_name = "Damagelink"
+    default = False
+
+
 class ExcludeLevelType(Choice):
     """
     Excludes one level type.
@@ -79,6 +88,7 @@ class SweetDefeatOptions(PerGameCommonOptions):
     death_link: Deathlink
     death_link_amnesty: DeathlinkAmnesty
     breath_link: Breathlink
+    damage_link: DamageLink
     exclude_level_type: ExcludeLevelType
     hard_skips: HardSkips
 

@@ -154,7 +154,7 @@ def set_all_location_rules(world: SweetDefeatWorld) -> None:
     set_level_rule(world, "Easier Level 2", lambda state: True)
     set_level_rule(world, "Easier Level 3", lambda state: state.has_from_list_unique(["Level 3 Cooler 1", "Level 3 Cooler 2", "Level 3 Cooler 3"], world.player, 2))
     set_level_rule(world, "Easier Level 4", lambda state: state.has_from_list_unique(["Level 4 Bubble 1", "Level 4 Bubble 2", "Level 4 Bubble 3", "Level 4 Bubble 4"], world.player, 2))
-    set_level_rule(world, "Easier Level 5", lambda state: state.has_from_list_unique(["Level 5 Bubble 1", "Level 5 Bubble 2", "Level 5 Bubble 3", "Level 5 Bubble 4"], world.player, 3) and state.has_from_list_unique(["Level 5 Cooler 1", "Level 5 Cooler 2", "Level 5 Cooler 3"], world.player, 2)) #TODO TODO
+    set_level_rule(world, "Easier Level 5", lambda state: state.has_from_list_unique(["Level 5 Bubble 1", "Level 5 Bubble 2", "Level 5 Bubble 3", "Level 5 Bubble 4"], world.player, 3) and state.has_from_list_unique(["Level 5 Cooler 1", "Level 5 Cooler 2", "Level 5 Cooler 3"], world.player, 2) and state.has("Level 5 Bubble 2", world.player)) #TODO TODO
     set_level_rule(world, "Easier Level 6", lambda state: (state.has("Level 6 Bubble 5", world.player) and (state.has("Level 6 Bubble 4", world.player) or state.has("Level 6 Bubble 3", world.player))) or (state.has("Level 6 Bubble 4", world.player) and world.options.hard_skips))
     set_level_rule(world, "Easier Level 7", lambda state: ((state.has("Level 7 Bubble 5", world.player) and (state.has("Level 7 Bubble 4", world.player) or state.has("Level 7 Bubble 3", world.player))) or (state.has("Level 7 Bubble 4", world.player) and world.options.hard_skips)) and state.has("Level 7 Bubble 9", world.player) and state.has_any(["Level 7 Cooler 1", "Level 7 Cooler 2"], world.player))
     set_level_rule(world, "Easier Level 8", lambda state: ((state.has("Level 8 Bubble 5", world.player) and (state.has("Level 8 Bubble 4", world.player) or state.has("Level 8 Bubble 3", world.player))) or (state.has("Level 8 Bubble 4", world.player) and world.options.hard_skips)) and state.has("Level 8 Bubble 9", world.player))
@@ -178,7 +178,7 @@ def set_all_location_rules(world: SweetDefeatWorld) -> None:
     set_level_rule(world, "Easier Level 26", lambda state: True)
     set_level_rule(world, "Easier Level 27", lambda state: state.has("Level 27 Cooler 1", world.player))
     set_level_rule(world, "Easier Level 28", lambda state: state.has("Level 28 Cooler 1", world.player))
-    set_level_rule(world, "Easier Level 29", lambda state: state.has("Level 29 Cooler 1", world.player))
+    set_level_rule(world, "Easier Level 29", lambda state: True)
     set_level_rule(world, "Easier Level 30", lambda state: state.has("Level 30 Cooler 1", world.player))
 
     set_level_rule(world, "One Level 1", lambda state: state.has("Level 1 Node", world.player))
