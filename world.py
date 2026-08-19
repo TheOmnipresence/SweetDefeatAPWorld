@@ -42,5 +42,6 @@ class SweetDefeatWorld(World):
 
     def fill_slot_data(self) -> Mapping[str, Any]:
         return self.options.as_dict(
-            "death_link", "death_link_amnesty", "breath_link", "damage_link", "exclude_level_type"
+            "death_link", "death_link_amnesty", "breath_link", "damage_link", "knockback_link", "knockback_link_sources",
+            "exclude_level_type", "hard_skips"
         )

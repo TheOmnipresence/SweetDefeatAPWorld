@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, FreeText
+from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, FreeText, OptionSet
 
 from .locations import LEVEL_TYPES
 
@@ -22,7 +22,7 @@ class Deathlink(Toggle):
     Toggles deathlink for the player.
     """
 
-    display_name = "Deathlink"
+    display_name = "DeathLink"
     default = False
 
 
@@ -31,7 +31,7 @@ class DeathlinkAmnesty(Range):
     The amount of deaths required to send a deathlink.
     """
 
-    display_name = "Deathlink Amnesty"
+    display_name = "DeathLink Amnesty"
     range_start = 1
     range_end = 20
     default = 1
@@ -42,7 +42,7 @@ class Breathlink(Toggle):
     Toggles breathlink for the player. Breathlink for Sweet Defeat is when the player's popsicle melts.
     """
 
-    display_name = "Breathlink"
+    display_name = "BreathLink"
     default = False
 
 
@@ -51,8 +51,30 @@ class DamageLink(Toggle):
     Toggles damagelink for the player. 100 damagelink points is one health.
     """
 
-    display_name = "Damagelink"
+    display_name = "DamageLink"
     default = False
+
+
+class KnockbackLink(Toggle):
+    """
+    Toggles knockbacklink for the player. 1 knockbacklink point is 100 units of in-game speed (pixels).
+    """
+
+    display_name = "KnockbackLink"
+    default = False
+
+
+class KnockbackLinkSources(OptionSet):
+    """
+    The sources that the player should send a knockback link from.
+    Acceptable values in this set are:
+    - Any (all sources)
+    - Bubbles
+    - Lasers
+    """
+
+    display_name = "KnockbackLink Sources"
+    default = ["Any"]
 
 
 class ExcludeLevelType(Choice):
@@ -89,6 +111,8 @@ class SweetDefeatOptions(PerGameCommonOptions):
     death_link_amnesty: DeathlinkAmnesty
     breath_link: Breathlink
     damage_link: DamageLink
+    knockback_link: KnockbackLink
+    knockback_link_sources: KnockbackLinkSources
     exclude_level_type: ExcludeLevelType
     hard_skips: HardSkips
 

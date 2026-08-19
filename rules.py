@@ -113,7 +113,7 @@ def set_all_location_rules(world: SweetDefeatWorld) -> None:
     set_level_rule(world, "Rampage Level 26", lambda state: True)
     set_level_rule(world, "Rampage Level 27", lambda state: True)
     set_level_rule(world, "Rampage Level 28", lambda state: state.has_all(["Level 28 Cooler 1", "Level 28 Cooler 2"], world.player))
-    set_level_rule(world, "Rampage Level 29", lambda state: state.has("Level 29 Cooler 1", world.player))
+    set_level_rule(world, "Rampage Level 29", lambda state: True)
     set_level_rule(world, "Rampage Level 30", lambda state: state.has("Level 30 Cooler 1", world.player))
 
     set_level_rule(world, "Cool Level 1", lambda state: state.has("Level 1 Cooler 1", world.player))
